@@ -35,3 +35,29 @@ depois de instalar o typeorm colocar em package.json
 
 yarn typeorm migration:create -n CreateUsers - migration para criar as tabelas
 yarn typeorm migration:run - para rodar o migration
+yarn typeorm migration:create -n CreateSurveys
+yarn typeorm migration:run
+
+yarn add jest @types/jest -D - para fazer testes
+yarn jest --init {
+1-running test in package.json? Yes
+2-use Typescript in configuration file? Yes
+3-choose the test environment: node
+4-Jest coverage reports? no
+5-provider instrument code for coverage? v8
+6-Automatically clear mock every test? yes
+}
+
+jest {
+bail: true - assegura que se ocorrer um bug ele nao passará para o outro
+//testEnvironment: "node",
+testMatch: ["**/__tests__/*.test.ts"] - pasta onde ira executar os testes
+preset: "ts-jest",
+} package.json {
+"test": "NODE_ENV=test jest" - no Windows se nao funcionar usar "set NODE_ENV=test jest"
+"posttest": "rm ./src/database/database.test.sqlite"
+
+}
+
+yarn add ts-jest -D
+yarn add supertest @types/supertest -D
