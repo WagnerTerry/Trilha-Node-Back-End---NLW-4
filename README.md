@@ -61,3 +61,8 @@ preset: "ts-jest",
 
 yarn add ts-jest -D
 yarn add supertest @types/supertest -D
+
+yarn typeorm migration:create -n CreateSurveysUsers
+yarn add nodemailer
+yarn add @types/nodemailer -D
+yarn add handlebars - templates customizados html
