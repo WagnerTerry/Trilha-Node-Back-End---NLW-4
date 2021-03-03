@@ -54,8 +54,7 @@ bail: true - assegura que se ocorrer um bug ele nao passará para o outro
 testMatch: ["**/__tests__/*.test.ts"] - pasta onde ira executar os testes
 preset: "ts-jest",
 } package.json {
-"test": "NODE_ENV=test jest" - no Windows se nao funcionar usar "set NODE_ENV=test jest"
-"posttest": "rm ./src/database/database.test.sqlite"
+"test": "NODE_ENV=test jest -i" - no Windows se nao funcionar usar "set NODE_ENV=test jest"
 
 }
 
@@ -66,3 +65,4 @@ yarn typeorm migration:create -n CreateSurveysUsers
 yarn add nodemailer
 yarn add @types/nodemailer -D
 yarn add handlebars - templates customizados html
+yarn add yup - para validação
